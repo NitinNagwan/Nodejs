@@ -1,0 +1,107 @@
+GET http://localhost:3003/data
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibml0aW5AbWFpbC5jb20iLCJpYXQiOjE2NTE0NjgxMzMsImV4cCI6MTY1MTQ2ODE2M30.XxOkyaUkpyGn_N_P_rCWGzYohvl_ZoJJl3BFKpAGYWs
+
+###
+
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+   "FirstName": "nitin",
+ "Email" : "nitin@mail.com",
+ "Password": "123"
+}
+
+###
+
+POST http://localhost:4000/user/login
+Content-Type: application/json
+
+{
+   "FirstName": "nitin",
+   "Email" : "nitin@mail.com",
+    "password": "123"
+}
+
+
+###
+POST http://localhost:4000/token
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.bml0aW4.-8wbMw5YrL0mW5-L4RuA91VOmGQUj1zVz6gooFxYFAU
+
+
+###
+GET http://localhost:8000/users
+
+###
+POST  http://localhost:8000/users/register
+Content-Type: application/json
+
+{
+   "FirstName" : "Nitin",
+   "Email" : "nitinnagwangmail.com",
+   "Password": "Nitin@123"
+}
+
+###
+
+POST  http://localhost:8000/users/login
+Content-Type: application/json
+
+{
+   "Email" : "nitin.nagwan@mail.vinove.com",
+   "Password": "Nitin@1234"
+}
+
+###
+GET http://localhost:8000/api/quiz/questions
+
+###
+POST http://localhost:8000/api/quiz/questions
+Content-Type: application/json
+
+{
+   "question": "HTML stands for?",
+   "options": ["HYPERTEXT MARKSUP LANGUGAE","HTPERTEXT MADEUP LANGUAGE", "HIGHTEXT MARKUP LANGUAGE", "HIGHTEXT MADEUP[ LANGUAGE"],
+   "answer": "HYPERTEXT MARKSUP LANGUGAE  "
+}
+
+###
+
+
+
+POST  http://localhost:8000/users/signup
+Content-Type: application/json
+
+{
+   "FirstName" : "raj",
+   "Email" : "nitin.nagwan@mail.vinove.com",
+   "Password": "Nitin@123"
+}
+
+###
+
+
+POST  http://localhost:8000/users/activateUser
+Content-Type: application/json
+
+{
+   "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6Im5pdGlubmFnd2FuOTkxMDIzNTE2NkBnbWFpbC5jb20iLCJGaXJzdE5hbWUiOiJyYWoiLCJQYXNzd29yZCI6Ik5pdGluQDEyMyIsImlhdCI6MTY1MjI0NDU3NiwiZXhwIjoxNjUyMjQ1Nzc2fQ.1fXrs7gfIIf7YzLXNpWrQRLQvIhV5_2221nRaGNNdNo"
+}
+
+###
+
+POST  http://localhost:8000/users/forgot-password
+Content-Type: application/json
+
+{
+   "Email" : "nitin.nagwan@mail.vinove.com"
+}
+
+###
+PUT  http://localhost:8000/users/reset-password
+Content-Type: application/json
+
+{
+   "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6Im5pdGluLm5hZ3dhbkBtYWlsLnZpbm92ZS5jb20iLCJpYXQiOjE2NTIyNjM3NzAsImV4cCI6MTY1MjI2NDk3MH0.GgeYsISNRDhE5SWs1fzGeqsn5qFmznSYLWSs4YpLR5E",
+   "newPassword": "Nitin@123"
+}

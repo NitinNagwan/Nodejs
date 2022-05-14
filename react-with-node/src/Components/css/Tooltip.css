@@ -1,0 +1,35 @@
+
+#popup-2{
+  background-color: #eee;
+  width: fit-content;
+  border: none;
+  transition: 0.7s ease-in-out;
+
+}  
+
+.modal{
+  padding: 0px 50px;
+}
+  
+.modal span{
+  color: red;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal span::before{
+  content:  '❌';
+  letter-spacing: 5px;
+  font-size: 14px;
+  text-align: center;
+  
+}
+
+.email-frame{
+  width: 400px;
+  background: #222;
+  padding: 10px;
+  position: relative;
+ 
+
+}

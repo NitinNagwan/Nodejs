@@ -1,0 +1,46 @@
+.Navbar{
+    width: 100%;
+    background-color: bisque;
+    display:flex ;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    align-items: center;
+}
+
+.link-section{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-item{
+text-transform: uppercase;
+}
+
+.user-detail{
+    width: 10%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.user-name{  
+    align-self: center;
+} 
+.user-image-section{
+    background: no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.user-detail:hover{
+    cursor: pointer;
+}
+
