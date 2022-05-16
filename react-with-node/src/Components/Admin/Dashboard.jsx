@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/main1.css';
+import "../css/main1.css";
 import {
   FaAddressCard,
   FaBars,
@@ -27,6 +27,9 @@ import {
   UsergroupAddOutlined,
   UserOutlined,
 } from "@ant-design/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { changeTab } from "../redux/Actions/tabAction";
+import SideNav from "./SideNav";
 const handleLogout = () => {
   sessionStorage.clear();
   window.location.reload();
@@ -67,10 +70,22 @@ const userAction = [
 ];
 
 export default function Dashboard() {
+  const tab = useSelector((state) => state.tabs.tab);
+  const dispatch = useDispatch();
+  console.log(tab);
+
+  const handleTabs = (value) => {
+    console.log(value);
+    dispatch(changeTab(value));
+  };
+
   return (
     <>
       <div style={{ background: "lightgray", width: "100%" }}>
-        <section id="side-content">
+        <div className="sidebar">
+          <SideNav/>
+        </div>
+        {/* <section id="side-content">
           <i className="la-times-circle">
             <FaTimesCircle />
           </i>
@@ -84,13 +99,19 @@ export default function Dashboard() {
                 return (
                   <li key={index}>
                     <i className="las la-images"> {item.Icon}</i>
-                    <span style={{ color: "#eee" }}>{item.menuItem}</span>
+                    <span
+                      style={{ color: "#eee" }}
+                      defaultValue={item.menuItem}
+                      onClick={(e) => handleTabs(e.target.__reactProps$iwi7fmhty.defaultValue)}
+                    >
+                      {item.menuItem}
+                    </span>
                   </li>
                 );
               })}
             </ul>
           </div>
-        </section>
+        </section> */}
         <section id="interaction">
           <nav>
             <i className="las la-bars Bars">
@@ -114,7 +135,7 @@ export default function Dashboard() {
                     return (
                       <li>
                         <i className="las la-user">{item.Icon}</i>
-                        <span style={{ color: "#eee" }} > {item.menuItem} </span>
+                        <span style={{ color: "#eee" }}> {item.menuItem} </span>
                       </li>
                     );
                   })}
